@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class EratosthenesPrimeSieve {
+public class EratosthenesPrimeSieve implements PrimeSieve{
 
     private static int max = 0;
     private static List<Integer> primNumbers = new ArrayList<>();
@@ -16,6 +16,11 @@ public class EratosthenesPrimeSieve {
         printNumbers(max);
         markPrimzahl();
         printPrimnumbers();
+    }
+
+    public EratosthenesPrimeSieve(int max)
+    {
+        this.max = max;
     }
 
     public static void markPrimzahl()
@@ -42,6 +47,31 @@ public class EratosthenesPrimeSieve {
         }
     }
 
+    public static void printNumbers(int max)
+    {
+        for (int i = 2;i<max;i++)
+        {
+            System.out.print(i+"  ");
+            if(i%10==0)
+            {
+                System.out.println("\n");
+            }
+        }
+        System.out.println(max);
+    }
+
+    @Override
+    public boolean isPrime(int p) {
+        if(p < 2) {
+            return false;
+        }
+        for(int i = 2; i < p; i++) {
+            if(p % i == 0)
+                return false;
+        }
+        return true;
+    }
+
     public static void printPrimnumbers()
     {
         System.out.println("\n");
@@ -61,19 +91,21 @@ public class EratosthenesPrimeSieve {
 
     }
 
-    public static void printNumbers(int max)
-    {
-        for (int i = 2;i<max;i++)
+    @Override
+    public void printPrimes() {
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("Primzahlen: ");
+
+        for (int i : primNumbers)
         {
-            System.out.print(i+"  ");
-            if(i%10==0)
-            {
-                System.out.println("\n");
-            }
+            System.out.print(i+" ");
         }
-        System.out.println(max);
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
     }
-
-
-
 }
