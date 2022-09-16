@@ -15,6 +15,7 @@ public class EratosthenesPrimeSieve {
         max = s.nextInt();
         printNumbers(max);
         markPrimzahl();
+        printPrimnumbers();
     }
 
     public static void markPrimzahl()
@@ -39,6 +40,25 @@ public class EratosthenesPrimeSieve {
                 prüfeArrayPrimzahlen[i1] = true;
             }
         }
+    }
+
+    public static void printPrimnumbers()
+    {
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("Primzahlen: ");
+
+        for (int i : primNumbers)
+        {
+            System.out.print(i+" ");
+        }
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("\n");
+
     }
 
     public static void printNumbers(int max)
