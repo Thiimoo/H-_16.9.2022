@@ -23,10 +23,22 @@ public class EratosthenesPrimeSieve {
         for(int i = 2; i <= max; i++)
         {
             if (prüfeArrayPrimzahlen[i] == false) {
-                //vielfache berechnen
+                calcVielfache(i);
             }
         }
 
+    }
+
+    public static void calcVielfache(int p)
+    {
+        primNumbers.add(p);
+        for (int i1 = 0;i1<=max; i1++)
+        {
+            if (i1%p==0)
+            {
+                prüfeArrayPrimzahlen[i1] = true;
+            }
+        }
     }
 
     public static void printNumbers(int max)
